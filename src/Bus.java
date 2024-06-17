@@ -1,3 +1,4 @@
+package src;
 class Bus {
       //implementacion del bus creando asientos
       private Asiento[] asientos = new Asiento[40];

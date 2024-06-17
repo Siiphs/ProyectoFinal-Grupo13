@@ -1,3 +1,4 @@
+package src;
 class Asiento {
       //Tipos: (0)Semi-cama, (1)Cama, (2)Ejecutivo, (3)Premium
       private int numero;
