@@ -16,6 +16,9 @@ public class Ventana extends JFrame {
         panelPrimero.continuar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                PanelVoleta.origen = panelPrimero.jOrigen.getSelectedItem().toString();
+                PanelVoleta.destino = panelPrimero.jDestino.getSelectedItem().toString();
+                PanelVoleta.tipoBus = panelPrimero.jTipoBus.getSelectedItem().toString();
                 panelSegundo = new PanelSegundo();
                 panelCl.add(panelSegundo, "O_o");
                 cl.show(panelCl, "O_o");
@@ -31,9 +34,9 @@ public class Ventana extends JFrame {
     }
 
     private void initComponent() {
-        this.setSize(600, 500);
+        this.setSize(600, 530);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setTitle("Ventana");
+        this.setTitle("Buses Dj Ñaky");
 
         panelCl = new JPanel();
         panelPrimero = new PanelPrimero();

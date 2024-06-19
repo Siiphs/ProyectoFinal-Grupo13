@@ -2,8 +2,8 @@ import javax.swing.*;
 
 public class PanelPrimero extends JPanel { 
     private GroupLayout gl;
-    private JLabel origenLabel, destinoLabel;
-    private JComboBox<String> origen, destino;
+    private JLabel origenLabel, destinoLabel, tipoBusLabel;
+    public JComboBox<String> jOrigen, jDestino, jTipoBus;
     public JButton continuar;
 
     public PanelPrimero() {
@@ -16,26 +16,34 @@ public class PanelPrimero extends JPanel {
         continuar = new JButton("Continuar");
         continuar.setFocusable(false);
 
-        origen = new JComboBox<String>();
-        origen.setFocusable(false);
-        origen.addItem("Linares");
-        origen.addItem("Talca");
-        origen.addItem("Concepcion");
-        origen.addItem("Chillan");
-        origen.addItem("Los Angeles");
-        origen.addItem("Santiago");
+        jOrigen = new JComboBox<String>();
+        jOrigen.setFocusable(false);
+        jOrigen.addItem("Linares");
+        jOrigen.addItem("Talca");
+        jOrigen.addItem("Concepcion");
+        jOrigen.addItem("Chillan");
+        jOrigen.addItem("Los Angeles");
+        jOrigen.addItem("Santiago");
 
-        destino = new JComboBox<String>();
-        destino.setFocusable(false);
-        destino.addItem("Linares");
-        destino.addItem("Talca");
-        destino.addItem("Concepcion");
-        destino.addItem("Chillan");
-        destino.addItem("Los Angeles");
-        destino.addItem("Santiago");
+        jDestino = new JComboBox<String>();
+        jDestino.setFocusable(false);
+        jDestino.addItem("Linares");
+        jDestino.addItem("Talca");
+        jDestino.addItem("Concepcion");
+        jDestino.addItem("Chillan");
+        jDestino.addItem("Los Angeles");
+        jDestino.addItem("Santiago");
+
+        jTipoBus = new JComboBox<String>();
+        jTipoBus.setFocusable(false);
+        jTipoBus.addItem("Ejecutivo");
+        jTipoBus.addItem("Semi-Cama");
+        jTipoBus.addItem("Cama");
+        jTipoBus.addItem("Mixto");
 
         origenLabel = new JLabel("Origen");
         destinoLabel = new JLabel("Destino");
+        tipoBusLabel = new JLabel("Tipo de Bus");
     }
 
     private void setupLayout() {
@@ -48,12 +56,17 @@ public class PanelPrimero extends JPanel {
                 .addGroup(gl.createSequentialGroup()                    
                 .addGroup(gl.createParallelGroup(GroupLayout.Alignment.CENTER)
                     .addComponent(origenLabel)
-                    .addComponent(origen)
+                    .addComponent(jOrigen)
                 )
                 .addGap(20)
                 .addGroup(gl.createParallelGroup(GroupLayout.Alignment.CENTER)
                     .addComponent(destinoLabel)
-                    .addComponent(destino)
+                    .addComponent(jDestino)
+                )
+                .addGap(20)
+                .addGroup(gl.createParallelGroup(GroupLayout.Alignment.CENTER)
+                    .addComponent(tipoBusLabel)
+                    .addComponent(jTipoBus)
                 )
             )
                 .addGap(20)
@@ -67,10 +80,13 @@ public class PanelPrimero extends JPanel {
             .addGroup(gl.createParallelGroup(GroupLayout.Alignment.BASELINE)
                 .addComponent(origenLabel)
                 .addComponent(destinoLabel)
+                .addComponent(tipoBusLabel)
             )
+            .addGap(3)
             .addGroup(gl.createParallelGroup(GroupLayout.Alignment.BASELINE)    
-                .addComponent(origen)
-                .addComponent(destino)
+                .addComponent(jOrigen)
+                .addComponent(jDestino)
+                .addComponent(jTipoBus)
             )
             .addGap(20)
             .addComponent(continuar)

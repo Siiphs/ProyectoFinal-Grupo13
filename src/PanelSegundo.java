@@ -3,7 +3,7 @@ import javax.swing.*;
 
 public class PanelSegundo extends JPanel {
     private TPaneAsientos panelAsientos;
-    private PanelVoleta panelVoleta;
+    public PanelVoleta panelVoleta;
     public JButton volver;
 
     public PanelSegundo() {
@@ -13,11 +13,9 @@ public class PanelSegundo extends JPanel {
 
     private void initComponent() {
         this.setBackground(new Color(242, 150, 26)); 
-        panelAsientos = new TPaneAsientos();
+        panelAsientos = new TPaneAsientos();  
         panelVoleta = new PanelVoleta();  
-        volver = new JButton("Volver");      
-        // tp = new JTabbedPane();
-        // tp.addTab("Piso 1", panelAsientos);
+        volver = new JButton("Volver");    
     }
 
     private void setupLayout() {
@@ -26,11 +24,10 @@ public class PanelSegundo extends JPanel {
 
         gl.setHorizontalGroup(gl.createSequentialGroup()
             .addContainerGap(20, 20)
-            // .addComponent(tp , 300, 300, 300)
             .addComponent(panelAsientos, 300, 300, 300)
             .addGap(15)
             .addGroup(gl.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                .addComponent(panelVoleta)
+                .addComponent(panelVoleta, 200, 240, 300)
                 .addGroup(gl.createSequentialGroup()
                 .addComponent(volver)
                 .addGap(10)
@@ -46,11 +43,11 @@ public class PanelSegundo extends JPanel {
                     .addGap(20)
                     .addComponent(volver)
                     .addGap(15)
-                    .addComponent(panelVoleta))
-                // .addComponent(tp)
+                    .addComponent(panelVoleta, 300, 400, 500))
                 .addComponent(panelAsientos)
+                .addGap(30)
             )
-            .addContainerGap(30, 30)
+            .addContainerGap(0, 30)
         );
     }
 
