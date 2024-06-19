@@ -7,6 +7,7 @@ public class Ventana extends JFrame {
     private CardLayout cl;
     private JPanel panelCl;
     private PanelPrimero panelPrimero;
+    private PanelSegundo panelSegundo;
 
     public Ventana() {
         initComponent();
@@ -15,7 +16,7 @@ public class Ventana extends JFrame {
         panelPrimero.continuar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                PanelSegundo panelSegundo = new PanelSegundo();
+                panelSegundo = new PanelSegundo();
                 panelCl.add(panelSegundo, "O_o");
                 cl.show(panelCl, "O_o");
 

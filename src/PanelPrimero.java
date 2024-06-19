@@ -14,8 +14,10 @@ public class PanelPrimero extends JPanel {
     private void initComponent() {
         this.setBackground(new java.awt.Color(227, 93, 167));
         continuar = new JButton("Continuar");
+        continuar.setFocusable(false);
 
         origen = new JComboBox<String>();
+        origen.setFocusable(false);
         origen.addItem("Linares");
         origen.addItem("Talca");
         origen.addItem("Concepcion");
@@ -24,6 +26,7 @@ public class PanelPrimero extends JPanel {
         origen.addItem("Santiago");
 
         destino = new JComboBox<String>();
+        destino.setFocusable(false);
         destino.addItem("Linares");
         destino.addItem("Talca");
         destino.addItem("Concepcion");
@@ -42,26 +45,33 @@ public class PanelPrimero extends JPanel {
         gl.setHorizontalGroup(gl.createSequentialGroup()
             .addContainerGap(20, 20)
             .addGroup(gl.createParallelGroup(GroupLayout.Alignment.CENTER)
-                .addComponent(origenLabel)
-                .addComponent(origen)
-                .addComponent(destinoLabel)
-                .addComponent(destino)
-                .addComponent(continuar)
-
+                .addGroup(gl.createSequentialGroup()                    
+                .addGroup(gl.createParallelGroup(GroupLayout.Alignment.CENTER)
+                    .addComponent(origenLabel)
+                    .addComponent(origen)
+                )
+                .addGap(20)
+                .addGroup(gl.createParallelGroup(GroupLayout.Alignment.CENTER)
+                    .addComponent(destinoLabel)
+                    .addComponent(destino)
+                )
             )
-            .addGap(5)
+                .addGap(20)
+                .addComponent(continuar)
+            )
             .addContainerGap(20, 20)
         );
 
         gl.setVerticalGroup(gl.createSequentialGroup()
-            .addContainerGap(20, 3000)
-            .addComponent(origenLabel)
-            .addGap(5)
-            .addComponent(origen)
-            .addGap(20)
-            .addComponent(destinoLabel)
-            .addGap(5)
-            .addComponent(destino)
+            .addContainerGap(20, 100)
+            .addGroup(gl.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                .addComponent(origenLabel)
+                .addComponent(destinoLabel)
+            )
+            .addGroup(gl.createParallelGroup(GroupLayout.Alignment.BASELINE)    
+                .addComponent(origen)
+                .addComponent(destino)
+            )
             .addGap(20)
             .addComponent(continuar)
             .addGap(20)
