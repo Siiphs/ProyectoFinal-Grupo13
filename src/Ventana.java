@@ -1,14 +1,32 @@
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class Ventana extends JFrame {
-    private JPanel panelPrincipal;
-    private PanelAsientos panelAsientos;
-    private PanelVoleta panelVoleta;
+    private CardLayout cl;
+    private JPanel panelCl;
+    private PanelPrimero panelPrimero;
 
     public Ventana() {
         initComponent();
         setupLayout();
+
+        panelPrimero.continuar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                PanelSegundo panelSegundo = new PanelSegundo();
+                panelCl.add(panelSegundo, "O_o");
+                cl.show(panelCl, "O_o");
+
+                panelSegundo.volver.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        cl.show(panelCl, ">_<");
+                    }
+                });
+            }
+        });
     }
 
     private void initComponent() {
@@ -16,38 +34,21 @@ public class Ventana extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setTitle("Ventana");
 
-        panelPrincipal = new JPanel();
-        panelPrincipal.setBackground(new java.awt.Color(242, 150, 26)); 
-        this.add(panelPrincipal);
-        panelAsientos = new PanelAsientos();
-        panelVoleta = new PanelVoleta();
+        panelCl = new JPanel();
+        panelPrimero = new PanelPrimero();
         
+        this.add(panelCl);
         this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.setVisible(true);
-        
     }
 
     private void setupLayout() {
-        GroupLayout gl = new GroupLayout(panelPrincipal);
-        panelPrincipal.setLayout(gl);
+        cl = new CardLayout();
+        panelCl.setLayout(cl);
 
-        gl.setHorizontalGroup(gl.createSequentialGroup()
-            .addContainerGap(20, 20)
-            .addComponent(panelAsientos)
-            .addGap(15)
-            .addComponent(panelVoleta)
-            .addContainerGap(20, 20)
-        );
-
-        gl.setVerticalGroup(gl.createSequentialGroup()
-            .addContainerGap(20, 20)
-            .addGroup(gl.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                .addComponent(panelAsientos)
-                .addComponent(panelVoleta)
-            )
-            .addContainerGap(20, 20)
-        );
+        panelCl.add(panelPrimero, ">_<");
+        cl.show(panelCl, ">_<");
     }
 
     @Override
