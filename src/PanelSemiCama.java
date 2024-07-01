@@ -1,11 +1,11 @@
 import java.awt.*;
 import javax.swing.*;
 
-public class PanelSegundoPiso extends JPanel { 
+public class PanelSemiCama extends JPanel { 
     private GroupLayout gl; 
     JToggleButton[] asientos;
 
-    public PanelSegundoPiso() {
+    public PanelSemiCama() {
         initComponent();
         setupLayout();
     }

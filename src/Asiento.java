@@ -1,6 +1,8 @@
 package src;
-class Asiento {
-      //Tipos: (0)Semi-cama, (1)Cama, (2)Ejecutivo, (3)Premium
+import javax.swing.JToggleButton;
+
+abstract class Asiento extends JToggleButton {
+      private String tipo;
       private int numero;
       private boolean ocupado;
 
@@ -24,5 +26,11 @@ class Asiento {
       public boolean getEstado() {
             return this.ocupado;
       }
+
+      public String getTipo() {
+            return this.tipo;
+      }
+
+      public abstract String Tipo();
 
    }

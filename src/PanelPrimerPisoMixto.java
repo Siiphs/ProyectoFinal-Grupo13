@@ -1,11 +1,11 @@
 import java.awt.*;
 import javax.swing.*;
 
-public class PanelPrimerPiso extends JPanel {
+public class PanelPrimerPisoMixto extends JPanel {
     private GroupLayout gl;
     JToggleButton[] asientos;
 
-    public PanelPrimerPiso() {
+    public PanelPrimerPisoMixto() {
         initComponent();
         setupLayout();
     }

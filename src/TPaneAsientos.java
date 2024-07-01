@@ -2,8 +2,11 @@ import java.awt.*;
 import javax.swing.*;
 
 public class TPaneAsientos extends JTabbedPane {
-    private PanelPrimerPiso primerPiso;
-    private PanelSegundoPiso segundoPiso;
+    private PanelPrimerPisoMixto primerPisoMixto;
+    private PanelSegundoPisoMixto segundoPisoMixto;
+    private PanelEjecutivo ejecutivo;
+    private PanelCama cama;
+    private PanelSemiCama semiCama;
     
 
     public TPaneAsientos() {
@@ -11,16 +14,19 @@ public class TPaneAsientos extends JTabbedPane {
     }
 
     private void initComponent() {
-        primerPiso = new PanelPrimerPiso();
-        segundoPiso = new PanelSegundoPiso();
+        primerPisoMixto = new PanelPrimerPisoMixto();
+        segundoPisoMixto = new PanelSegundoPisoMixto();
+        ejecutivo = new PanelEjecutivo();
+        cama = new PanelCama();
+        semiCama = new PanelSemiCama();
 
         switch (PanelVoleta.tipoBus) {
-            case "Ejecutivo" -> this.addTab("Ejecutivo", segundoPiso);
-            case "Cama" -> this.addTab("Cama", segundoPiso);
-            case "Semi-Cama" -> this.addTab("Semi-Cama", segundoPiso);
-            default -> {
-                this.addTab("Primer Piso Cama", primerPiso);
-                this.addTab("Segundo Piso Semi-Cama", segundoPiso);
+            case "Ejecutivo" -> this.addTab("Ejecutivo", ejecutivo);
+            case "Cama" -> this.addTab("Cama", cama);
+            case "Semi-Cama" -> this.addTab("Semi-Cama", semiCama);
+            case "Mixto" -> {
+                this.addTab("Primer Piso Cama", primerPisoMixto);
+                this.addTab("Segundo Piso Semi-Cama", segundoPisoMixto);
             }
         }
     }
