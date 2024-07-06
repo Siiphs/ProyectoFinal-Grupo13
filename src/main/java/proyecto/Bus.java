@@ -1,3 +1,4 @@
+package proyecto;
 // package src;
 // class Bus {
 //       //implementacion del bus creando asientos

@@ -1,4 +1,4 @@
-package src;
+package proyecto;
 public enum TipoAsiento {
       SemiCama(0, 10000),
       Cama(1, 15000), 
