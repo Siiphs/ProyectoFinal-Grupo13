@@ -7,7 +7,6 @@ public class TPaneAsientos extends JTabbedPane {
     private PanelSegundoPisoDP segundoPisoDP;
     private PanelPrimerPisoDP primerPisoDP;
     private PanelEstandar estandar;
-    
 
     public TPaneAsientos() {
         initComponent();
