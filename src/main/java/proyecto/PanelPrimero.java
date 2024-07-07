@@ -50,9 +50,18 @@ public class PanelPrimero extends JPanel {
 
         jMes = new JComboBox<>();
         jMes.setFocusable(false);
-        for (int i = 1; i < 13; i++) {
-            jMes.addItem(String.format("%02d", i));
-        }
+                jMes.addItem("Enero");
+                jMes.addItem("Febrero");
+                jMes.addItem("Marzo");
+                jMes.addItem("Abril");
+                jMes.addItem("Mayo");
+                jMes.addItem("Junio");
+                jMes.addItem("Julio");
+                jMes.addItem("Agosto");
+                jMes.addItem("Septiembre");
+                jMes.addItem("Octubre");
+                jMes.addItem("Noviembre");
+                jMes.addItem("Diciembre");
 
         jHora = new JComboBox<>();
         jHora.setFocusable(false);
@@ -80,30 +89,29 @@ public class PanelPrimero extends JPanel {
                                         .addComponent(origenLabel)
                                         .addComponent(jOrigen)
                                 )
-                                .addGap(20)
-                                .addGroup(gl.createParallelGroup(GroupLayout.Alignment.CENTER)
-                                        .addComponent(destinoLabel)
-                                        .addComponent(jDestino)
-                                )
-                                .addGap(20)
-                                .addGroup(gl.createParallelGroup(GroupLayout.Alignment.CENTER)
-                                        .addComponent(tipoBusLabel)
-                                        .addComponent(jTipoBus)
-                                )
-                                .addGap(35)
+                                .addGap(10)
+
                                 .addGroup(gl.createParallelGroup(GroupLayout.Alignment.CENTER)
                                         .addComponent(diaLabel)
                                         .addComponent(jDia)
                                 )
-                                .addGap(20)
+                                .addGap(10)
+
                                 .addGroup(gl.createParallelGroup(GroupLayout.Alignment.CENTER)
+                                        .addComponent(tipoBusLabel)
+                                        .addComponent(jTipoBus)
                                         .addComponent(mesLabel)
                                         .addComponent(jMes)
                                 )
-                                .addGap(20)
+                                .addGap(10)
                                 .addGroup(gl.createParallelGroup(GroupLayout.Alignment.CENTER)
                                         .addComponent(horaLabel)
                                         .addComponent(jHora)
+                                )
+                                .addGap(10)
+                                .addGroup(gl.createParallelGroup(GroupLayout.Alignment.CENTER)
+                                        .addComponent(destinoLabel)
+                                        .addComponent(jDestino)
                                 )
                         )
                         .addGap(20)
@@ -118,15 +126,21 @@ public class PanelPrimero extends JPanel {
                         .addComponent(origenLabel)
                         .addComponent(destinoLabel)
                         .addComponent(tipoBusLabel)
-                        .addComponent(diaLabel)
-                        .addComponent(mesLabel)
-                        .addComponent(horaLabel)
                 )
                 .addGap(3)
                 .addGroup(gl.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(jOrigen)
                         .addComponent(jDestino)
                         .addComponent(jTipoBus)
+                )
+                .addGap(20)
+                .addGroup(gl.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                        .addComponent(diaLabel)
+                        .addComponent(mesLabel)
+                        .addComponent(horaLabel)
+                )
+                .addGap(3)
+                .addGroup(gl.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(jDia)
                         .addComponent(jMes)
                         .addComponent(jHora)

@@ -14,7 +14,7 @@ public class PanelVoleta extends JPanel{
 
     private void initComponent() {
         this.setBackground(new java.awt.Color(180, 192, 241));
-        horarioLabel = new JLabel("Salida: " + dia + "/" + mes + " a las  " +  hora);
+        horarioLabel = new JLabel("Salida: " + dia + " de " + mes + " a las  " +  hora);
         horarioLabel.setFont(new Font("Arial", Font.BOLD, 13));
         origenLabel = new JLabel("Origen: " + origen);
         origenLabel.setFont(new Font("Arial", Font.BOLD, 13));

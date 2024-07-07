@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class Bus {
     private static Bus instance;
-    private String origen, destino, tipoBus, hora;
-    private int capacidad;
+    private String origen, destino, tipoBus, mes, hora;
+    private int capacidad, dia;
     private ArrayList<Asiento> asientos;
 
     private Bus() {
@@ -13,6 +13,8 @@ public class Bus {
         this.origen = "Linares";
         this.destino = "Talca";
         this.tipoBus = "Estandar";
+        this.mes = "Enero";
+        this.dia = 01;
         this.hora = "00:00";
         this.capacidad = 40;
     }
@@ -24,7 +26,7 @@ public class Bus {
         else if(tipoBus.equals("Doble planta")){
             inicializarAsientos(60);
         }
-        
+
         for (int i = 1; i <= numAsientos; i++) {
             // Asumiendo que los primeros 10 asientos son de categoría "Ejecutivo", los siguientes 10 son "Semi Cama" y los demás "Cama"
             String tipo;
@@ -38,7 +40,6 @@ public class Bus {
                 tipo = "SemiCama";
                 asientos.add(new AsientoSemiCama(i));
             }
-
         }
     }
 
