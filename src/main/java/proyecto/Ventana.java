@@ -18,22 +18,35 @@ public class Ventana extends JFrame {
         panelPrimero.continuar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                PanelVoleta.dia = panelPrimero.jDia.getSelectedItem().toString();
-                PanelVoleta.mes = panelPrimero.jMes.getSelectedItem().toString();
-                PanelVoleta.hora = panelPrimero.jHora.getSelectedItem().toString();
-                PanelVoleta.origen = panelPrimero.jOrigen.getSelectedItem().toString();
-                PanelVoleta.destino = panelPrimero.jDestino.getSelectedItem().toString();
-                PanelVoleta.tipoBus = panelPrimero.jTipoBus.getSelectedItem().toString();
-                panelSegundo = new PanelSegundo();
-                panelCl.add(panelSegundo, "O_o");
-                cl.show(panelCl, "O_o");
+                if((Integer.valueOf(panelPrimero.jDia.getSelectedItem().toString()) >= 30 && panelPrimero.jMes.getSelectedItem().toString()=="Febrero")
+                    ||(Integer.valueOf(panelPrimero.jDia.getSelectedItem().toString()) == 31 && (panelPrimero.jMes.getSelectedItem().toString()=="Abril"
+                    ||panelPrimero.jMes.getSelectedItem().toString()=="Junio"
+                    ||panelPrimero.jMes.getSelectedItem().toString()=="Septiembre"
+                    ||panelPrimero.jMes.getSelectedItem().toString()=="Noviembre"))){
+                    JOptionPane.showMessageDialog(null, "Por favor ingresa una fecha válida");
+                }
+                else if(panelPrimero.jOrigen.getSelectedItem() == panelPrimero.jDestino.getSelectedItem()){
+                    JOptionPane.showMessageDialog(null, "Por favor selecciona un destino distinto de tu origen");
+                }
+                else{
+                    PanelVoleta.dia = panelPrimero.jDia.getSelectedItem().toString();
+                    PanelVoleta.mes = panelPrimero.jMes.getSelectedItem().toString();
+                    PanelVoleta.hora = panelPrimero.jHora.getSelectedItem().toString();
+                    PanelVoleta.origen = panelPrimero.jOrigen.getSelectedItem().toString();
+                    PanelVoleta.destino = panelPrimero.jDestino.getSelectedItem().toString();
+                    PanelVoleta.tipoBus = panelPrimero.jTipoBus.getSelectedItem().toString();
+                    panelSegundo = new PanelSegundo();
+                    panelCl.add(panelSegundo, "O_o");
+                    cl.show(panelCl, "O_o");
 
-                panelSegundo.volver.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        cl.show(panelCl, ">_<");
-                    }
-                });
+                    panelSegundo.volver.addActionListener(new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                            cl.show(panelCl, ">_<");
+                        }
+                    });
+                }
+                
             }
         });
     }
