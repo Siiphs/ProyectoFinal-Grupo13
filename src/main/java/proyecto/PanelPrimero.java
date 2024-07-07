@@ -5,8 +5,8 @@ import javax.swing.*;
 public class PanelPrimero extends JPanel {
     public static Bus bus;
     private GroupLayout gl;
-    private JLabel origenLabel, destinoLabel, tipoBusLabel, horarioLabel;
-    public JComboBox<String> jOrigen, jDestino, jTipoBus, jHorario;
+    private JLabel origenLabel, destinoLabel, tipoBusLabel, diaLabel, mesLabel, horaLabel;
+    public JComboBox<String> jOrigen, jDestino, jTipoBus, jDia, jMes, jHora;
     public JButton continuar;
 
     public PanelPrimero() {
@@ -42,16 +42,30 @@ public class PanelPrimero extends JPanel {
         jTipoBus.addItem("Estandar");
         jTipoBus.addItem("Doble planta");
 
-        jHorario = new JComboBox<>();
-        jHorario.setFocusable(false);
+        jDia = new JComboBox<>();
+        jDia.setFocusable(false);
+        for (int i = 1; i < 32; i++) {
+            jDia.addItem(String.format("%02d", i));
+        }
+
+        jMes = new JComboBox<>();
+        jMes.setFocusable(false);
+        for (int i = 1; i < 13; i++) {
+            jMes.addItem(String.format("%02d", i));
+        }
+
+        jHora = new JComboBox<>();
+        jHora.setFocusable(false);
         for (int i = 0; i < 24; i++) {
-            jHorario.addItem(String.format("%02d : 00", i));
+            jHora.addItem(String.format("%02d : 00", i));
         }
 
         origenLabel = new JLabel("Origen");
         destinoLabel = new JLabel("Destino");
         tipoBusLabel = new JLabel("Tipo de Bus");
-        horarioLabel = new JLabel("Horario");
+        diaLabel = new JLabel("Dia");
+        mesLabel = new JLabel("Mes");
+        horaLabel = new JLabel("Hora");
     }
 
     private void setupLayout() {
@@ -76,10 +90,20 @@ public class PanelPrimero extends JPanel {
                                         .addComponent(tipoBusLabel)
                                         .addComponent(jTipoBus)
                                 )
+                                .addGap(35)
+                                .addGroup(gl.createParallelGroup(GroupLayout.Alignment.CENTER)
+                                        .addComponent(diaLabel)
+                                        .addComponent(jDia)
+                                )
                                 .addGap(20)
                                 .addGroup(gl.createParallelGroup(GroupLayout.Alignment.CENTER)
-                                        .addComponent(horarioLabel)
-                                        .addComponent(jHorario)
+                                        .addComponent(mesLabel)
+                                        .addComponent(jMes)
+                                )
+                                .addGap(20)
+                                .addGroup(gl.createParallelGroup(GroupLayout.Alignment.CENTER)
+                                        .addComponent(horaLabel)
+                                        .addComponent(jHora)
                                 )
                         )
                         .addGap(20)
@@ -94,14 +118,18 @@ public class PanelPrimero extends JPanel {
                         .addComponent(origenLabel)
                         .addComponent(destinoLabel)
                         .addComponent(tipoBusLabel)
-                        .addComponent(horarioLabel)
+                        .addComponent(diaLabel)
+                        .addComponent(mesLabel)
+                        .addComponent(horaLabel)
                 )
                 .addGap(3)
                 .addGroup(gl.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(jOrigen)
                         .addComponent(jDestino)
                         .addComponent(jTipoBus)
-                        .addComponent(jHorario)
+                        .addComponent(jDia)
+                        .addComponent(jMes)
+                        .addComponent(jHora)
                 )
                 .addGap(20)
                 .addComponent(continuar)

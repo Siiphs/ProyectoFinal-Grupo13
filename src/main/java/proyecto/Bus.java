@@ -5,7 +5,7 @@ public class Bus {
     private String origen;
     private String destino;
     private String tipoBus;
-    private String horario;
+    private String hora;
     private int capacidad;
 
     private Bus() {
@@ -13,7 +13,7 @@ public class Bus {
         this.origen = "Linares";
         this.destino = "Talca";
         this.tipoBus = "Estandar";
-        this.horario = "00:00";
+        this.hora = "00:00";
         this.capacidad = 40;
     }
 
@@ -24,11 +24,11 @@ public class Bus {
         return instance;
     }
 
-    public void setDatos(String origen, String destino, String tipoBus, String horario, int capacidad) {
+    public void setDatos(String origen, String destino, String tipoBus, String hora, int capacidad) {
         this.origen = origen;
         this.destino = destino;
         this.tipoBus = tipoBus;
-        this.horario = horario;
+        this.hora = hora;
         this.capacidad = capacidad;
     }
 
@@ -44,8 +44,8 @@ public class Bus {
         return tipoBus;
     }
 
-    public String getHorario() {
-        return horario;
+    public String gethora() {
+        return hora;
     }
 
     public int getCapacidad() {

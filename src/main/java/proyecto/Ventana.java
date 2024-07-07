@@ -17,7 +17,9 @@ public class Ventana extends JFrame {
         panelPrimero.continuar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                PanelVoleta.horario = panelPrimero.jHorario.getSelectedItem().toString();
+                PanelVoleta.dia = panelPrimero.jDia.getSelectedItem().toString();
+                PanelVoleta.mes = panelPrimero.jMes.getSelectedItem().toString();
+                PanelVoleta.hora = panelPrimero.jHora.getSelectedItem().toString();
                 PanelVoleta.origen = panelPrimero.jOrigen.getSelectedItem().toString();
                 PanelVoleta.destino = panelPrimero.jDestino.getSelectedItem().toString();
                 PanelVoleta.tipoBus = panelPrimero.jTipoBus.getSelectedItem().toString();
