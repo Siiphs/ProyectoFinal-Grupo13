@@ -40,7 +40,7 @@ public class Ventana extends JFrame {
     private void initComponent() {
         this.setSize(670, 530);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setTitle("Buses Dj Ñaky");
+        this.setTitle("Touhou Bus");
 
         panelCl = new JPanel();
         panelPrimero = new PanelPrimero();

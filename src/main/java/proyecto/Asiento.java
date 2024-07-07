@@ -32,5 +32,4 @@ abstract class Asiento extends JToggleButton {
       }
 
       public abstract String Tipo();
-
    }

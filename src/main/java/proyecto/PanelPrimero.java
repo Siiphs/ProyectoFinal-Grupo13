@@ -1,6 +1,7 @@
 package proyecto;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class PanelPrimero extends JPanel {
     public static Bus bus;
@@ -150,5 +151,12 @@ public class PanelPrimero extends JPanel {
                 .addGap(20)
                 .addContainerGap(20, 3000)
         );
+    }
+
+@Override
+    public void paintComponent(Graphics g) {
+            super.paintComponent(g);
+            ImageIcon imageicon = new ImageIcon("src\\main\\java\\imagenes\\fondo.png");
+            imageicon.paintIcon(this, g, 0, 0);
     }
 }
