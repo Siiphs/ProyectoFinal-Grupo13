@@ -1,12 +1,12 @@
 package proyecto;
 
+import java.util.ArrayList;
+
 public class Bus {
     private static Bus instance;
-    private String origen;
-    private String destino;
-    private String tipoBus;
-    private String hora;
+    private String origen, destino, tipoBus, hora;
     private int capacidad;
+    private ArrayList<Asiento> asientos;
 
     private Bus() {
         // Inicialización por defecto
@@ -15,6 +15,31 @@ public class Bus {
         this.tipoBus = "Estandar";
         this.hora = "00:00";
         this.capacidad = 40;
+    }
+
+    private void inicializarAsientos(int numAsientos) {
+        if(tipoBus.equals("Estandar")){
+            inicializarAsientos(40);
+        }
+        else if(tipoBus.equals("Doble planta")){
+            inicializarAsientos(60);
+        }
+        
+        for (int i = 1; i <= numAsientos; i++) {
+            // Asumiendo que los primeros 10 asientos son de categoría "Ejecutivo", los siguientes 10 son "Semi Cama" y los demás "Cama"
+            String tipo;
+            if (i <= 10) {
+                tipo = "Ejecutivo";
+                asientos.add(new AsientoEjecutivo(i));
+            } else if (i <= 20) {
+                tipo = "Cama";
+                asientos.add(new AsientoCama(i));
+            } else {
+                tipo = "SemiCama";
+                asientos.add(new AsientoSemiCama(i));
+            }
+
+        }
     }
 
     public static synchronized Bus getInstance() {
