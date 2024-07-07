@@ -1,8 +1,6 @@
 package proyecto;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class PanelPrimero extends JPanel {
     public static Bus bus;
