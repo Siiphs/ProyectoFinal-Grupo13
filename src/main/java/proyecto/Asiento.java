@@ -1,4 +1,5 @@
 package proyecto;
+
 import javax.swing.JToggleButton;
 
 abstract class Asiento extends JToggleButton {
