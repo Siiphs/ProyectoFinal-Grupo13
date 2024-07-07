@@ -1,19 +1,19 @@
 package proyecto;
 public enum TipoAsiento {
-      SemiCama(0, 10000),
-      Cama(1, 15000), 
-      Ejecutivo(2, 20000);
+      SemiCama("SemiCama", 10000),
+      Cama("Cama", 15000), 
+      Ejecutivo("Ejecutivo", 20000);
 
-      private int tipo;
+      private String tipo;
       private int precio;
       
          
-      TipoAsiento(int tipo, int precio) {
+      TipoAsiento(String tipo, int precio) {
          this.tipo = tipo;
          this.precio = precio;
       }
 
-      public int getTipo() {
+      public String getTipo() {
          return this.tipo;
       }
 

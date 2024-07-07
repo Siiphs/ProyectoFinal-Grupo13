@@ -2,11 +2,11 @@ package proyecto;
 import java.awt.*;
 import javax.swing.*;
 
-public class PanelSemiCama extends JPanel { 
+public class PanelEstandar extends JPanel { 
     private GroupLayout gl; 
     JToggleButton[] asientos;
 
-    public PanelSemiCama() {
+    public PanelEstandar() {
         initComponent();
         setupLayout();
     }

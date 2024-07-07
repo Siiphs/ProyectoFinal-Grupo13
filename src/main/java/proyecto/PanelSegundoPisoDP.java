@@ -2,11 +2,11 @@ package proyecto;
 import java.awt.*;
 import javax.swing.*;
 
-public class PanelCama extends JPanel {
+public class PanelSegundoPisoDP extends JPanel {
     private GroupLayout gl;
     JToggleButton[] asientos;
 
-    public PanelCama() {
+    public PanelSegundoPisoDP() {
         initComponent();
         setupLayout();
     }
@@ -61,7 +61,7 @@ public class PanelCama extends JPanel {
         );
 
         gl.setVerticalGroup(gl.createSequentialGroup()
-            .addContainerGap(12, 12)
+            .addContainerGap(20, 20)
             .addGroup(gl.createParallelGroup(GroupLayout.Alignment.BASELINE)
                 .addComponent(asientos[0], 30, 30, 30)
                 .addComponent(asientos[1], 30, 30, 30)

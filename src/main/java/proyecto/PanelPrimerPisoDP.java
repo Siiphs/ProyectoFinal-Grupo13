@@ -2,11 +2,11 @@ package proyecto;
 import java.awt.*;
 import javax.swing.*;
 
-public class PanelSegundoPisoMixto extends JPanel { 
+public class PanelPrimerPisoDP extends JPanel { 
     private GroupLayout gl; 
     JToggleButton[] asientos;
 
-    public PanelSegundoPisoMixto() {
+    public PanelPrimerPisoDP() {
         initComponent();
         setupLayout();
     }
