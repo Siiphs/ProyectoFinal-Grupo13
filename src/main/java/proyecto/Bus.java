@@ -1,61 +1,50 @@
 package proyecto;
 
-import java.util.ArrayList;
-
 public class Bus {
-    private static Bus instance;
-    private String origen, destino, tipoBus, mes, hora;
-    private int capacidad, dia;
-    private ArrayList<Asiento> asientos;
+    private String origen, destino, tipoBus, mes, dia, hora;
+    private Asiento[] asientos;
 
-    private Bus() {
-        // Inicialización por defecto
-        this.origen = "Linares";
-        this.destino = "Talca";
-        this.tipoBus = "Estandar";
-        this.mes = "Enero";
-        this.dia = 01;
-        this.hora = "00:00";
-        this.capacidad = 40;
-    }
-
-    private void inicializarAsientos(int numAsientos) {
-        if(tipoBus.equals("Estandar")){
-            inicializarAsientos(40);
-        }
-        else if(tipoBus.equals("Doble planta")){
-            inicializarAsientos(60);
-        }
-
-        for (int i = 1; i <= numAsientos; i++) {
-            // Asumiendo que los primeros 10 asientos son de categoría "Ejecutivo", los siguientes 10 son "Semi Cama" y los demás "Cama"
-            String tipo;
-            if (i <= 10) {
-                tipo = "Ejecutivo";
-                asientos.add(new AsientoEjecutivo(i));
-            } else if (i <= 20) {
-                tipo = "Cama";
-                asientos.add(new AsientoCama(i));
-            } else {
-                tipo = "SemiCama";
-                asientos.add(new AsientoSemiCama(i));
-            }
-        }
-    }
-
-    public static synchronized Bus getInstance() {
-        if (instance == null) {
-            instance = new Bus();
-        }
-        return instance;
-    }
-
-    public void setDatos(String origen, String destino, String tipoBus, String hora, int capacidad) {
+    public Bus(String origen, String destino, String tipoBus, String mes, String dia, String hora) {
         this.origen = origen;
         this.destino = destino;
         this.tipoBus = tipoBus;
+        this.mes = mes;
+        this.dia = dia;
         this.hora = hora;
-        this.capacidad = capacidad;
+        inicializarAsientos(tipoBus);
+    }
+
+    public void inicializarAsientos(String tipoBus) {
+        if(tipoBus.equals("Estandar")){
+            asientos = new AsientoEjecutivo[40];
+            for (int i = 0; i < 40; i++) {
+                int indice = i;
+                asientos[indice] = new AsientoEjecutivo(i+1); 
+                asientos[i].setFocusable(false);
+                }
+            }
+        else if(tipoBus.equals("Doble planta")){
+            asientos = new Asiento[60];
+            for (int i = 1; i < 40; i++) {
+                int indice = i;
+                asientos[indice] = new AsientoSemiCama(i+1);
+                asientos[i].setFocusable(false);
+                }
+            for (int i = 41; i < 60; i++) {
+                int indice = i;
+                asientos[indice] = new AsientoCama(i+1);
+                asientos[i].setFocusable(false);
+                }
+            }
+        }
+
+    public void setDatos(String origen, String destino, String tipoBus, String dia, String mes, String hora) {
+        this.origen = origen;
+        this.destino = destino;
+        this.tipoBus = tipoBus;
+        this.dia = dia;
+        this.mes = mes;
+        this.hora = hora;
     }
 
     public String getOrigen() {
@@ -74,7 +63,15 @@ public class Bus {
         return hora;
     }
 
-    public int getCapacidad() {
-        return capacidad;
+    public String getMes() {
+        return mes;
+    }
+
+    public String getDia() {
+        return dia;
+    }
+
+    public Asiento[] getAsientos() {
+        return asientos;
     }
 }

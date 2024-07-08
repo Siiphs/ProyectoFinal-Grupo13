@@ -1,7 +1,10 @@
 package proyecto;
 
-import java.awt.*;
-import javax.swing.*;
+import java.awt.Color;
+
+import javax.swing.GroupLayout;
+import javax.swing.JPanel;
+import javax.swing.JToggleButton;
 
 /**
  * PanelEstandar es el panel que tiene todos los asientos del autobús, en el
@@ -16,9 +19,9 @@ import javax.swing.*;
  * @param asientos es una lista de botones la cual representa todos los asientos
  *                 del piso.
  */
-public class PanelEstandar extends JPanel {
-    private GroupLayout gl;
-    JToggleButton[] asientos;
+public class PanelEstandar extends JPanel { 
+    private GroupLayout gl; 
+    AsientoEjecutivo[] asientos;
 
     public PanelEstandar() {
         initComponent();
@@ -30,10 +33,10 @@ public class PanelEstandar extends JPanel {
      */
     private void initComponent() {
         this.setBackground(new Color(217, 224, 26));
-        asientos = new JToggleButton[40];
+        asientos = new AsientoEjecutivo[40];
 
         for (int i = 0; i < 40; i++) {
-            asientos[i] = new JToggleButton("A" + (i + 1));
+            asientos[i] = new AsientoEjecutivo(i+1);
             asientos[i].setFocusable(false);
         }
     }

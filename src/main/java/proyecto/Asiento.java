@@ -21,6 +21,7 @@ abstract class Asiento extends JToggleButton {
       public Asiento(int numero) {
             this.numero = numero;
             this.ocupado = false;
+            this.setText("A" + numero);   
       }
 
       public void ocupar() {
