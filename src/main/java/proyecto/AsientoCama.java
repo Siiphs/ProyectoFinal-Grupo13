@@ -2,11 +2,19 @@ package proyecto;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JToggleButton;
 
-public class AsientoCama extends Asiento {
+/**
+ * La clase AsientoCama representa un asiento de tipo cama, heredando todas las
+ * propiedades de Asiento.
+ * 
+ * @author Joseph Matamala, Felipe Tillería
+ * @since 19 de junio de 2024
+ * 
+ * @see Asiento
+ */
 
+public class AsientoCama extends Asiento {
     public AsientoCama(int numero) {
         super(numero);
         this.setText("A" + numero); 

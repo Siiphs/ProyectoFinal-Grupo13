@@ -1,12 +1,26 @@
 package proyecto;
 
-import java.awt.Color;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.util.ArrayList;
 
-import javax.swing.GroupLayout;
-import javax.swing.JPanel;
+/**
+ * PanelSegundoPisoDP es el panel donde se muestran todos los asientos del
+ * segundo piso, en caso de que el autobús sea doble.
+ * 
+ * @author Joseph Matamala, Felipe Tillería
+ * @since 19 de junio de 2024
+ * 
+ * @param gl       es el objeto GroupLayout que nos deja personalizar la
+ *                 distribución de objetos en la ventana
+ * 
+ * @param asientos es una lista de botones la cual representa todos los asientos
+ *                 del piso.
+ */
 
 public class PanelSegundoPisoDP extends JPanel { 
-    private GroupLayout gl; 
+    private GroupLayout gl;
     AsientoSemiCama[] asientos;
 
     public PanelSegundoPisoDP() {
@@ -14,16 +28,30 @@ public class PanelSegundoPisoDP extends JPanel {
         setupLayout();
     }
 
+    /**
+     * Añade el fondo del panel y los botones que representan a cada asiento.
+     */
     private void initComponent() {
         this.setBackground(new Color(217, 224, 26));
         asientos = new AsientoSemiCama[40];
 
         for (int i = 0; i < 40; i++) {
+            int indice = i+1;
             asientos[i] = new AsientoSemiCama(i+1);
             asientos[i].setFocusable(false);
+
+            asientos[i].addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Asiento semicama: " + indice);
+            }
+        });
         }
     }
-
+    /**
+     * Configura la posición de cada asiento dentro de la pantalla, esto según su
+     * grupo horizontal y vertical.
+     */
     private void setupLayout() {
         gl = new GroupLayout(this);
         this.setLayout(gl);
