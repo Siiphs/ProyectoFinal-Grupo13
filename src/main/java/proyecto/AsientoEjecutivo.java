@@ -27,7 +27,7 @@ public class AsientoEjecutivo extends Asiento {
             public void actionPerformed(ActionEvent e) {
                 if (isSelected()) {
                     if(ids.size() >= 10) {
-                        precio -= TipoAsiento.Ejecutivo.getPrecio();
+
                     }
                     else {
                     TipoAsientoEventManager.getInstance().fireTipoAsientoEvent(new TipoAsientoEvent(AsientoEjecutivo.this, Tipo()));

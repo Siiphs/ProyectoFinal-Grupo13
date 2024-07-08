@@ -27,7 +27,7 @@ public class AsientoCama extends Asiento {
             public void actionPerformed(ActionEvent e) {
                 if (isSelected()) {
                     if(ids.size() >= 10) {
-                        precio -= TipoAsiento.Cama.getPrecio();
+
                     }
                     else {
                     TipoAsientoEventManager.getInstance().fireTipoAsientoEvent(new TipoAsientoEvent(AsientoCama.this, Tipo()));
