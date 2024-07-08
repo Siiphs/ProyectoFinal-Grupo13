@@ -1,0 +1,7 @@
+Boleta de Compra
+Origen: Linares
+Destino: Santiago
+Salida: 01 de Enero a las 00 : 00
+Tipo de Asiento: Ejecutivo
+IDs: 20, 16, 12, 10, 14, 22
+Precio: 120000
