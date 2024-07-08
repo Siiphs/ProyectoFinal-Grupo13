@@ -26,8 +26,8 @@ import javax.swing.*;
  */
 
 public class Ventana extends JFrame {
-    private CardLayout cl;
-    private JPanel panelCl;
+    public static CardLayout cl;
+    public static JPanel panelCl;
     private PanelPrimero panelPrimero;
     private PanelSegundo panelSegundo;
 

@@ -35,7 +35,7 @@ public class PanelBoleta extends JPanel implements TipoAsientoListener {
         tipoAsientoLabel.setFont(new Font("Arial", Font.BOLD, 16));
         precioLabel = new JLabel("Precio: (al seleccionar)");
         precioLabel.setFont(new Font("Arial", Font.BOLD, 16));
-        idLabel = new JLabel("ID: (al seleccionar)");
+        idLabel = new JLabel("IDs: (al seleccionar)");
         idLabel.setFont(new Font("Arial", Font.BOLD, 16));
         comprar = new JButton("Comprar");
         comprar.setFocusable(false);
@@ -87,8 +87,11 @@ public class PanelBoleta extends JPanel implements TipoAsientoListener {
                         JOptionPane.showMessageDialog(null, "Compra realizada con éxito");
                         Asiento.ids.clear();
                         Asiento.precio = 0;
-                        PanelBoleta.precioLabel.setText("Precio: $" + Asiento.precio + " pesos");
-                        Asiento.generarIde();
+                        PanelBoleta.precioLabel.setText("Precio: (al seleccionar)");
+                        PanelBoleta.idLabel.setText("IDs: (al seleccionar)");
+                        Ventana.cl.show(Ventana.panelCl, ">_<");
+
+                        JOptionPane.showMessageDialog(null, "¡Gracias por su compra, vuelva pronto!");
                     }
             }
         });
