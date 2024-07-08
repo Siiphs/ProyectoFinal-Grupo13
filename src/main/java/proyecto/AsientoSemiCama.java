@@ -19,6 +19,12 @@ public class AsientoSemiCama extends Asiento {
             public void actionPerformed(ActionEvent e) {
                 if (isSelected()) {
                     TipoAsientoEventManager.getInstance().fireTipoAsientoEvent(new TipoAsientoEvent(AsientoSemiCama.this, Tipo()));
+                    precio += TipoAsiento.SemiCama.getPrecio();
+                    PanelBoleta.precioLabel.setText("Precio: $" + precio + " pesos");
+                }
+                else {
+                    precio -= TipoAsiento.SemiCama.getPrecio();
+                    PanelBoleta.precioLabel.setText("Precio: $" + precio + " pesos");
                 }
             }
         });

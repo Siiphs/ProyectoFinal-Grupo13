@@ -19,6 +19,12 @@ public class AsientoCama extends Asiento {
             public void actionPerformed(ActionEvent e) {
                 if (isSelected()) {
                     TipoAsientoEventManager.getInstance().fireTipoAsientoEvent(new TipoAsientoEvent(AsientoCama.this, Tipo()));
+                    precio += TipoAsiento.Cama.getPrecio();
+                    PanelBoleta.precioLabel.setText("Precio: $" + precio + " pesos");
+                }
+                else {
+                    precio -= TipoAsiento.Cama.getPrecio();
+                    PanelBoleta.precioLabel.setText("Precio: $" + precio + " pesos");
                 }
             }
         });

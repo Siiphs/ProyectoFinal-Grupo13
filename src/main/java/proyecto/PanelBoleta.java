@@ -7,12 +7,12 @@ import javax.swing.GroupLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class PanelVoleta extends JPanel implements TipoAsientoListener {
+public class PanelBoleta extends JPanel implements TipoAsientoListener {
     private GroupLayout gl;
     static String origen, destino, tipoBus, dia, mes, hora;
-    private JLabel origenLabel, destinoLabel, tipoAsientoLabel, horarioLabel;
+    static JLabel origenLabel, destinoLabel, tipoAsientoLabel, horarioLabel, precioLabel, idLabel;
 
-    public PanelVoleta() {
+    public PanelBoleta() {
         initComponent();
         setupLayout();
         TipoAsientoEventManager.getInstance().addTipoAsientoListener(this);
@@ -28,6 +28,10 @@ public class PanelVoleta extends JPanel implements TipoAsientoListener {
         destinoLabel.setFont(new Font("Arial", Font.BOLD, 13));
         tipoAsientoLabel = new JLabel("Tipo de Asiento: (al seleccionar)");
         tipoAsientoLabel.setFont(new Font("Arial", Font.BOLD, 16));
+        precioLabel = new JLabel("Precio: (al seleccionar)");
+        precioLabel.setFont(new Font("Arial", Font.BOLD, 16));
+        idLabel = new JLabel("ID: (al seleccionar)");
+        idLabel.setFont(new Font("Arial", Font.BOLD, 16));
     }
 
     private void setupLayout() {
@@ -41,6 +45,8 @@ public class PanelVoleta extends JPanel implements TipoAsientoListener {
                 .addComponent(origenLabel)
                 .addComponent(destinoLabel)
                 .addComponent(tipoAsientoLabel)
+                .addComponent(idLabel)
+                .addComponent(precioLabel)
             )
             .addContainerGap(20, 20)
         );
@@ -54,6 +60,10 @@ public class PanelVoleta extends JPanel implements TipoAsientoListener {
             .addComponent(destinoLabel)
             .addGap(15)
             .addComponent(tipoAsientoLabel)
+            .addGap(15)
+            .addComponent(idLabel)
+            .addGap(50)
+            .addComponent(precioLabel)
             .addContainerGap(20, 20)
         );
     }

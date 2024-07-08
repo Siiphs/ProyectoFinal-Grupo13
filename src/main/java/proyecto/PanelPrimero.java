@@ -4,7 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 
 public class PanelPrimero extends JPanel {
-    public static Bus bus;
     private GroupLayout gl;
     private JLabel origenLabel, destinoLabel, tipoBusLabel, diaLabel, mesLabel, horaLabel;
     public JComboBox<String> jOrigen, jDestino, jTipoBus, jDia, jMes, jHora;
