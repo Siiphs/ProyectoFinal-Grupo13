@@ -1,8 +1,6 @@
 package proyecto;
 
-import java.awt.*;
 import java.awt.event.*;
-import javax.swing.*;
 
 /**
  * La clase AsientoEjecutivo representa un asiento de tipo ejecutivo, heredando

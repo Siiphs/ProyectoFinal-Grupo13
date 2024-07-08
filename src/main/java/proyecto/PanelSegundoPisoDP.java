@@ -3,7 +3,6 @@ package proyecto;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.ArrayList;
 
 /**
  * PanelSegundoPisoDP es el panel donde se muestran todos los asientos del

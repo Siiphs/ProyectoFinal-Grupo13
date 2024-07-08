@@ -1,8 +1,6 @@
 package proyecto;
 
 import java.awt.*;
-import java.awt.event.*;
-import java.util.ArrayList;
 import javax.swing.GroupLayout;
 import javax.swing.JPanel;
 
