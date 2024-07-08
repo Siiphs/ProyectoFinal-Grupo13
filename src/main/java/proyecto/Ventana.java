@@ -53,12 +53,12 @@ public class Ventana extends JFrame {
                 } else if (panelPrimero.jOrigen.getSelectedItem() == panelPrimero.jDestino.getSelectedItem()) {
                     JOptionPane.showMessageDialog(null, "Por favor selecciona un destino distinto de tu origen");
                 } else {
-                    PanelVoleta.dia = panelPrimero.jDia.getSelectedItem().toString();
-                    PanelVoleta.mes = panelPrimero.jMes.getSelectedItem().toString();
-                    PanelVoleta.hora = panelPrimero.jHora.getSelectedItem().toString();
-                    PanelVoleta.origen = panelPrimero.jOrigen.getSelectedItem().toString();
-                    PanelVoleta.destino = panelPrimero.jDestino.getSelectedItem().toString();
-                    PanelVoleta.tipoBus = panelPrimero.jTipoBus.getSelectedItem().toString();
+                    PanelBoleta.dia = panelPrimero.jDia.getSelectedItem().toString();
+                    PanelBoleta.mes = panelPrimero.jMes.getSelectedItem().toString();
+                    PanelBoleta.hora = panelPrimero.jHora.getSelectedItem().toString();
+                    PanelBoleta.origen = panelPrimero.jOrigen.getSelectedItem().toString();
+                    PanelBoleta.destino = panelPrimero.jDestino.getSelectedItem().toString();
+                    PanelBoleta.tipoBus = panelPrimero.jTipoBus.getSelectedItem().toString();
                     panelSegundo = new PanelSegundo();
                     panelCl.add(panelSegundo, "O_o");
                     cl.show(panelCl, "O_o");

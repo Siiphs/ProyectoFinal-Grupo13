@@ -24,7 +24,7 @@ import javax.swing.*;
 
 public class PanelSegundo extends JPanel {
     private TPaneAsientos panelAsientos;
-    public PanelVoleta panelVoleta;
+    public PanelBoleta panelVoleta;
     public JButton volver;
 
     public PanelSegundo() {
@@ -39,7 +39,7 @@ public class PanelSegundo extends JPanel {
     private void initComponent() {
         this.setBackground(new Color(242, 150, 26));
         panelAsientos = new TPaneAsientos();
-        panelVoleta = new PanelVoleta();
+        panelVoleta = new PanelBoleta();
         volver = new JButton("Volver");
     }
 

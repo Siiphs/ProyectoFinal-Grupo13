@@ -3,7 +3,6 @@ package proyecto;
 import java.awt.*;
 import javax.swing.*;
 
-
 /**
  * PanelPrimerPisoDP es el panel donde se muestran todos los asientos del primer
  * piso, en caso de que el autobús sea doble.
@@ -22,6 +21,10 @@ public class PanelPrimerPisoDP extends JPanel {
     private GroupLayout gl;
     AsientoCama[] asientos;
 
+    public PanelPrimerPisoDP() {
+        initComponent();
+        setupLayout();
+    }
 
     /**
      * Añade el fondo del panel y los botones que representan a cada asiento.

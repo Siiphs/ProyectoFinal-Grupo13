@@ -1,10 +1,8 @@
 package proyecto;
 
 import java.awt.Color;
-
 import javax.swing.GroupLayout;
 import javax.swing.JPanel;
-import javax.swing.JToggleButton;
 
 /**
  * PanelEstandar es el panel que tiene todos los asientos del autobús, en el

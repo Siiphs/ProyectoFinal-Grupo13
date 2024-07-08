@@ -37,7 +37,7 @@ public class TPaneAsientos extends JTabbedPane {
         primerPisoDP = new PanelPrimerPisoDP();
         estandar = new PanelEstandar();
 
-        switch (PanelVoleta.tipoBus) {
+        switch (PanelBoleta.tipoBus) {
             case "Estandar" -> this.addTab("Piso unico", estandar);
             case "Doble planta" -> {
                 this.addTab("Primer Piso", primerPisoDP);

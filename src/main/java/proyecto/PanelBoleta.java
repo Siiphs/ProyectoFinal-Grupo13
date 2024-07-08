@@ -12,7 +12,7 @@ import javax.swing.*;
  * @param gl es el objeto GroupLayout que nos deja personalizar la distribución de objetos en la ventana
  */
 
-public class PanelVoleta extends JPanel{
+public class PanelBoleta extends JPanel{
     private GroupLayout gl;
     static String origen, destino, tipoBus, dia, mes, hora;
     private JLabel origenLabel, destinoLabel, tipoAsientoLabel, horarioLabel;
@@ -20,7 +20,7 @@ public class PanelVoleta extends JPanel{
     /**
      * el método constructor de PanelVoleta inicializa los componentes y su distribución.
      */
-    public PanelVoleta(){
+    public PanelBoleta(){
         initComponent();
         setupLayout();
     }
