@@ -1,6 +1,8 @@
 package proyecto;
 
 import java.awt.*;
+import java.awt.event.*;
+import java.util.ArrayList;
 import javax.swing.*;
 
 /**
@@ -33,10 +35,18 @@ public class PanelPrimerPisoDP extends JPanel {
         this.setBackground(new Color(26, 224, 217));
         asientos = new AsientoCama[20];
         for (int i = 0; i < 20; i++) {
+            int indice = i + 41;
             asientos[i] = new AsientoCama(i + 41);
             asientos[i].setFocusable(false);
+            
+            asientos[i].addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    System.out.println("Asiento cama: " + indice);
+                }
+            });
+            }
         }
-    }
 
     /**
      * Configura la posición de cada asiento dentro de la pantalla, esto según su

@@ -2,9 +2,10 @@ package proyecto;
 
 import java.awt.*;
 import javax.swing.*;
+import java.awt.event.*;
 
 /**
- * PanelVoleta nos indica en la segunda ventana exactamente qué pasaje estamos comprando, mostrando la fecha de salida, el origen, el destino y el tipo de asiento que se va a comprar.
+ * PanelBoleta nos indica en la segunda ventana exactamente qué pasaje estamos comprando, mostrando la fecha de salida, el origen, el destino y el tipo de asiento que se va a comprar.
  * 
  * @author Joseph Matamala, Felipe Tillería
  * @since 19 de junio de 2024
@@ -16,9 +17,10 @@ public class PanelBoleta extends JPanel{
     private GroupLayout gl;
     static String origen, destino, tipoBus, dia, mes, hora;
     private JLabel origenLabel, destinoLabel, tipoAsientoLabel, horarioLabel;
+    public JButton comprar;
 
     /**
-     * el método constructor de PanelVoleta inicializa los componentes y su distribución.
+     * el método constructor de PanelBoleta inicializa los componentes y su distribución.
      */
     public PanelBoleta(){
         initComponent();
@@ -39,6 +41,8 @@ public class PanelBoleta extends JPanel{
         destinoLabel.setFont(new Font("Arial", Font.BOLD, 13));
         tipoAsientoLabel = new JLabel("Tipo de Asiento: (al seleccionar)" );
         tipoAsientoLabel.setFont(new Font("Arial", Font.BOLD, 16));
+        comprar = new JButton("Comprar");
+        comprar.setFocusable(false);
     }
 
 
@@ -56,6 +60,7 @@ public class PanelBoleta extends JPanel{
                 .addComponent(origenLabel)
                 .addComponent(destinoLabel)
                 .addComponent(tipoAsientoLabel)
+                .addComponent(comprar)
             )
             .addContainerGap(20, 20)
         );
@@ -69,8 +74,17 @@ public class PanelBoleta extends JPanel{
             .addComponent(destinoLabel)
             .addGap(15)
             .addComponent(tipoAsientoLabel)
+            .addGap(230)
+            .addComponent(comprar)
             .addContainerGap(20, 20)
         );
+        comprar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                    JOptionPane.showMessageDialog(null, "Compra realizada con éxito");
+
+            }
+        });
     }
 
     @Override

@@ -1,6 +1,8 @@
 package proyecto;
 
-import java.awt.Color;
+import java.awt.*;
+import java.awt.event.*;
+import java.util.ArrayList;
 import javax.swing.GroupLayout;
 import javax.swing.JPanel;
 
@@ -34,10 +36,18 @@ public class PanelEstandar extends JPanel {
         asientos = new AsientoEjecutivo[40];
 
         for (int i = 0; i < 40; i++) {
+            int indice = i+1;
             asientos[i] = new AsientoEjecutivo(i+1);
             asientos[i].setFocusable(false);
+            
+            asientos[i].addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    System.out.println("Asiento ejecutivo: " + indice);
+                }
+            });
+            }
         }
-    }
 
     /**
      * Configura la posición de cada asiento dentro de la pantalla, esto según su

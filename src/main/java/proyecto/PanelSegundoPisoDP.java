@@ -2,6 +2,8 @@ package proyecto;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
+import java.util.ArrayList;
 
 /**
  * PanelSegundoPisoDP es el panel donde se muestran todos los asientos del
@@ -18,7 +20,7 @@ import java.awt.*;
  */
 
 public class PanelSegundoPisoDP extends JPanel { 
-    private GroupLayout gl; 
+    private GroupLayout gl;
     AsientoSemiCama[] asientos;
 
     public PanelSegundoPisoDP() {
@@ -34,11 +36,18 @@ public class PanelSegundoPisoDP extends JPanel {
         asientos = new AsientoSemiCama[40];
 
         for (int i = 0; i < 40; i++) {
+            int indice = i+1;
             asientos[i] = new AsientoSemiCama(i+1);
             asientos[i].setFocusable(false);
+
+            asientos[i].addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Asiento semicama: " + indice);
+            }
+        });
         }
     }
-
     /**
      * Configura la posición de cada asiento dentro de la pantalla, esto según su
      * grupo horizontal y vertical.
