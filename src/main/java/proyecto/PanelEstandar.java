@@ -2,7 +2,13 @@ package proyecto;
 
 import java.awt.*;
 import javax.swing.*;
-
+/**
+ * PanelEstandar es el panel que 
+ * 
+ * @author Joseph Matamala, Felipe Tillería
+ * @since 19 de junio de 2024
+ * 
+ */
 public class PanelEstandar extends JPanel { 
     private GroupLayout gl; 
     JToggleButton[] asientos;

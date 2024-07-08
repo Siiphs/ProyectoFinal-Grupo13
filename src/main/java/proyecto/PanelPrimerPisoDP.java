@@ -3,6 +3,16 @@ package proyecto;
 import java.awt.*;
 import javax.swing.*;
 
+/**
+ * PanelPrimerPisoDP es el panel donde se muestran todos los asientos del primer piso, en caso de que el autobús sea doble.
+ * 
+ * @author Joseph Matamala, Felipe Tillería
+ * @since 19 de junio de 2024
+ * 
+ * @param gl es el objeto GroupLayout que nos deja personalizar la distribución de objetos en la ventana
+ * @param asientos es una lista de botones la cual representa todos los asientos del piso.
+ */
+
 public class PanelPrimerPisoDP extends JPanel { 
     private GroupLayout gl; 
     JToggleButton[] asientos;
@@ -12,6 +22,9 @@ public class PanelPrimerPisoDP extends JPanel {
         setupLayout();
     }
 
+    /**
+     * Añade el fondo del panel y los botones que representan a cada asiento.
+     */
     private void initComponent() {
         this.setBackground(new Color(217, 224, 26));
         asientos = new JToggleButton[40];
@@ -22,6 +35,9 @@ public class PanelPrimerPisoDP extends JPanel {
         }
     }
 
+    /**
+     * Configura la posición de cada asiento dentro de la pantalla, esto según su grupo horizontal y vertical.
+     */
     private void setupLayout() {
         gl = new GroupLayout(this);
         this.setLayout(gl);

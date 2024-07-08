@@ -3,6 +3,15 @@ package proyecto;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * PanelPrimero es el primer panel del programa, este se muestra cuando el programa se abre por primera vez y nos da la opciones para comprar un pasaje de bus.
+ * 
+ * @author Joseph Matamala, Felipe Tillería
+ * @since 19 de junio de 2024
+ * 
+ * @param bus representa el bus          
+ * @param gl es el objeto GroupLayout que nos deja personalizar la distribución de objetos en la ventana
+ */
 public class PanelPrimero extends JPanel {
     public static Bus bus;
     private GroupLayout gl;
@@ -16,10 +25,16 @@ public class PanelPrimero extends JPanel {
     }
 
     private void initComponent() {
+        /**
+         * Añade las características del panel para elegir el pasaje, y le agrega sus componentes correspondientes.
+         */
         this.setBackground(new java.awt.Color(227, 93, 167));
         continuar = new JButton("Continuar");
         continuar.setFocusable(false);
 
+        /**
+         * Añade los lugares de origen del pasaje.
+         */
         jOrigen = new JComboBox<>();
         jOrigen.setFocusable(false);
         jOrigen.addItem("Linares");
@@ -29,6 +44,10 @@ public class PanelPrimero extends JPanel {
         jOrigen.addItem("Los Angeles");
         jOrigen.addItem("Santiago");
 
+
+        /**
+         * Añade los lugares de destino del pasaje.
+         */
         jDestino = new JComboBox<>();
         jDestino.setFocusable(false);
         jDestino.addItem("Linares");
@@ -38,11 +57,19 @@ public class PanelPrimero extends JPanel {
         jDestino.addItem("Los Angeles");
         jDestino.addItem("Santiago");
 
+
+        /**
+         * Añade las opciones para el tipo de bus.
+         */
         jTipoBus = new JComboBox<>();
         jTipoBus.setFocusable(false);
         jTipoBus.addItem("Estandar");
         jTipoBus.addItem("Doble planta");
 
+
+        /**
+         * Añade la opción para cada fecha del bus, esta después es validada para no elegir fechas incorrectas (ejemplo: 30 de febrero).
+         */
         jDia = new JComboBox<>();
         jDia.setFocusable(false);
         for (int i = 1; i < 32; i++) {
@@ -153,6 +180,9 @@ public class PanelPrimero extends JPanel {
         );
     }
 
+    /**
+     * "Pinta" la imagen de fondo de la ventana.
+     */
 @Override
     public void paintComponent(Graphics g) {
             super.paintComponent(g);

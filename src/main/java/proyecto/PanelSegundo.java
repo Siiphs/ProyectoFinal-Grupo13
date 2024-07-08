@@ -3,6 +3,19 @@ package proyecto;
 import java.awt.*;
 import javax.swing.*;
 
+/**
+ * PanelSegundo es el segundo panel del programa, en este el cliente puede elegir los asientos de el o los pasajes que vaya a comprar.
+ * 
+ * @author Joseph Matamala, Felipe Tillería
+ * @since 19 de junio de 2024
+ * 
+ * 
+ * @param panelAsientos es el panel que contiene los JButton de cada asiento que el cliente puede comprar.
+ * @param panelVoleta es el panel mostrado en la ventana que le da confirmación al cliente del pasaje que va a comprar.
+ * @param volver es el botón que vuelve al primer panel, dándonos la opción de elegir otro bus.
+ * 
+ */
+
 public class PanelSegundo extends JPanel {
     private TPaneAsientos panelAsientos;
     public PanelVoleta panelVoleta;
@@ -13,6 +26,9 @@ public class PanelSegundo extends JPanel {
         setupLayout();
     }
 
+    /**
+     * Añade las características del panel para elegir el pasaje, y le agrega sus componentes correspondientes.
+     */
     private void initComponent() {
         this.setBackground(new Color(242, 150, 26)); 
         panelAsientos = new TPaneAsientos();  
