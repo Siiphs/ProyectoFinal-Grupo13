@@ -32,16 +32,20 @@ abstract class Asiento extends JToggleButton {
         this.setText("A" + numero);
         this.listeners = new ArrayList<>();
         this.addActionListener(e -> {
-            if(ids.size() >= 10) {
-                JOptionPane.showMessageDialog(null, "No puedes seleccionar más de 10 asientos");
-                this.setSelected(false);
-            }
-            else if (isSelected()) {
+            if (isSelected()) {
+                if (ids.size() >= 10) {
+                    JOptionPane.showMessageDialog(null, "No se pueden seleccionar más de 10 asientos", "Error",
+                            JOptionPane.ERROR_MESSAGE);
+                    this.setSelected(false);
+                    ids.remove(Integer.valueOf(this.numero));
+                    return;
+                }
+                else{
                 System.out.println("Seleccionado " + this.numero);
                 if (!ids.contains(this.numero)) {
                     ids.add(this.numero);
                 }
-                fireTipoAsientoEvent(new TipoAsientoEvent(this, tipo));
+                fireTipoAsientoEvent(new TipoAsientoEvent(this, tipo));}
             } else {
                 System.out.println("Deseleccionado " + this.numero);
                 Integer numeroObj = Integer.valueOf(this.numero);

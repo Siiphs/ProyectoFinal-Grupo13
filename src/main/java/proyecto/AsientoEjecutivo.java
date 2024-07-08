@@ -26,9 +26,14 @@ public class AsientoEjecutivo extends Asiento {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (isSelected()) {
+                    if(ids.size() >= 10) {
+                        precio -= TipoAsiento.Ejecutivo.getPrecio();
+                    }
+                    else {
                     TipoAsientoEventManager.getInstance().fireTipoAsientoEvent(new TipoAsientoEvent(AsientoEjecutivo.this, Tipo()));
                     precio += TipoAsiento.Ejecutivo.getPrecio();
                     PanelBoleta.precioLabel.setText("Precio: $" + precio + " pesos");
+                    }
                 }
                 else {
                     precio -= TipoAsiento.Ejecutivo.getPrecio();

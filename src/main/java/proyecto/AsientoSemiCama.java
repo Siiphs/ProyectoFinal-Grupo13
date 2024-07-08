@@ -26,9 +26,14 @@ public class AsientoSemiCama extends Asiento {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (isSelected()) {
+                    if(ids.size() >= 10) {
+                        precio -= TipoAsiento.SemiCama.getPrecio();
+                    }
+                    else {
                     TipoAsientoEventManager.getInstance().fireTipoAsientoEvent(new TipoAsientoEvent(AsientoSemiCama.this, Tipo()));
                     precio += TipoAsiento.SemiCama.getPrecio();
                     PanelBoleta.precioLabel.setText("Precio: $" + precio + " pesos");
+                    }
                 }
                 else {
                     precio -= TipoAsiento.SemiCama.getPrecio();

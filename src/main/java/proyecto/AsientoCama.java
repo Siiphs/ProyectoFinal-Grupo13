@@ -1,8 +1,8 @@
 package proyecto;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.JToggleButton;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 
 /**
  * La clase AsientoCama representa un asiento de tipo cama, heredando todas las
@@ -26,9 +26,14 @@ public class AsientoCama extends Asiento {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (isSelected()) {
+                    if(ids.size() >= 10) {
+                        precio -= TipoAsiento.Cama.getPrecio();
+                    }
+                    else {
                     TipoAsientoEventManager.getInstance().fireTipoAsientoEvent(new TipoAsientoEvent(AsientoCama.this, Tipo()));
                     precio += TipoAsiento.Cama.getPrecio();
                     PanelBoleta.precioLabel.setText("Precio: $" + precio + " pesos");
+                    }
                 }
                 else {
                     precio -= TipoAsiento.Cama.getPrecio();
