@@ -21,6 +21,16 @@ public class PanelEstandar extends JPanel {
         for (int i = 0; i < 40; i++) {
             asientos[i] = new AsientoEjecutivo(i+1);
             asientos[i].setFocusable(false);
+            TipoAsientoEventManager.getInstance().addTipoAsientoListener(event -> {
+            });
+
+            AsientoEjecutivo asiento = asientos[i];
+            asiento.addActionListener(e -> {
+                if (asiento.isSelected()) {
+                    System.out.println(asiento.Tipo() + " selected");
+                    TipoAsientoEventManager.getInstance().fireTipoAsientoEvent(new TipoAsientoEvent(asiento, asiento.Tipo()));
+                }
+            });
         }
     }
 

@@ -9,4 +9,5 @@ public class AsientoEjecutivo extends Asiento {
     public String Tipo() {
         return "Ejecutivo";
     }
+
 }
