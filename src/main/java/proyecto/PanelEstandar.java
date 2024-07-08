@@ -1,11 +1,13 @@
 package proyecto;
 
-import java.awt.*;
-import javax.swing.*;
+import java.awt.Color;
+
+import javax.swing.GroupLayout;
+import javax.swing.JPanel;
 
 public class PanelEstandar extends JPanel { 
     private GroupLayout gl; 
-    JToggleButton[] asientos;
+    AsientoEjecutivo[] asientos;
 
     public PanelEstandar() {
         initComponent();
@@ -14,10 +16,10 @@ public class PanelEstandar extends JPanel {
 
     private void initComponent() {
         this.setBackground(new Color(217, 224, 26));
-        asientos = new JToggleButton[40];
+        asientos = new AsientoEjecutivo[40];
 
         for (int i = 0; i < 40; i++) {
-            asientos[i] = new JToggleButton("A" + (i+1));
+            asientos[i] = new AsientoEjecutivo(i+1);
             asientos[i].setFocusable(false);
         }
     }
